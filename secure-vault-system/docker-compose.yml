@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  blockchain:
+    image: trufflesuite/ganache
+    ports:
+      - "8545:8545"
+    command:
+      - "--deterministic"
+
+  deployer:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    depends_on:
+      - blockchain
+    command: sh ./docker/entrypoint.sh
