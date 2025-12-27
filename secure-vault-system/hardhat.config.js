@@ -10,9 +10,11 @@ module.exports = {
       },
     },
   },
-  networks: {
-    localhost: {
-      url: "http://127.0.0.1:8545",
-    },
+
+networks: {
+  localhost: {
+    url: "http://blockchain:8545",
+    chainId: 1337,
   },
+},
 };
